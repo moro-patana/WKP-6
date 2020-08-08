@@ -35,3 +35,20 @@ const foods = [
 		vegetarian: false,
 	},
 ];
+
+// Grab elements
+const form = document.querySelector(`.form-input`);
+// Create an html
+const myHTML = `
+        <div class="order">
+		   <h2>Your order</h2>
+			<div class="order-list">
+				<ul>
+				</ul>
+				<p>Total</p>
+			</div>
+		</div>	`;
+form.insertAdjacentHTML(`afterend`, myHTML);
+
+// Listen to the button "add"
+// Listen to the confirm button
