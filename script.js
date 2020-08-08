@@ -47,7 +47,8 @@ const myHTML = `
 				</ul>
 				<p>Total</p>
 			</div>
-		</div>	`;
+		</div>
+		<button class="confirm">Confirm Order</button>`;
 form.insertAdjacentHTML(`afterend`, myHTML);
 
 // Listen to the button "add"
