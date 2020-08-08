@@ -53,7 +53,7 @@ const innerModal = document.querySelector(`.inner-modal`);
 	   const html = foods.map(
 		   item => `
 		   <div class="menu">
-			 <ul class="spicy">
+			 <ul class="lists">
 				 <li>${item.id}</li>
 				 <li>${item.price}</li>
 				 <li><button type="button">Add</button></li>
@@ -62,6 +62,8 @@ const innerModal = document.querySelector(`.inner-modal`);
 		   .join(``);
 
 article.innerHTML = html;
+
+// Create a card order
 const myHTML = `
 	</div>
 		<div class="order-cart">
@@ -77,24 +79,48 @@ form.insertAdjacentHTML(`afterend`, myHTML);
 
 
 
-// Listen to the button "add"
-// Listen to the confirm button
+// Check the checkbox to show the type of food
 const handleChecked = (e) => {
+// Condition of the checkbox 
 	if (spicyInput.checked === true) {
 		const spicyFood = foods.filter(food => food.spicy === true);
          console.log(spicyFood);
-		const spicyFoodHtml = spicyFood.map(item => {
-			`
-			<ul>
-			   <li>${item.title}</li>
-			   <li>${item.title}</li>
-			</ul>
+		 spicyFood.map(item => {
+			const spicyOrder =`
+			<div class="menu">
+			 <ul class="spicy">
+				 <li>${item.id}</li>
+				 <li>${item.price}</li>
+				 <li><button type="button">Add</button></li>
+			 </ul>
+		   </div>
 			`;
+			article.innerHTML = spicyOrder;
+
 		})
-	 
-		return;
 	}
 }
+const CheckedVeg = (e) => {
+	if (vegetarianInput.checked === true) {
+		const vegetarianFood = foods.filter(food => food.vegetarian === true);
+         console.log(vegetarianFood);
+		return vegetarianFood.map(item => {
+			const vegetarianOrder =`
+			<div class="menu">
+			 <ul class="spicy">
+				 <li>${item.id}</li>
+				 <li>${item.price}</li>
+				 <li><button type="button">Add</button></li>
+			 </ul>
+		   </div>
+			`;
+			article.innerHTML = vegetarianOrder;
+
+		});
+	}
+}
+// Create new modal
+
 const handleConfirmBtn = (e) => {
 	const resultHtml = `
 	<h2>Thank your</h2>
@@ -103,14 +129,14 @@ const handleConfirmBtn = (e) => {
 	innerModal.innerHTML = resultHtml;
 	outerModal.classList.add(`open`);
 }
-
+// Add class to the modal
 const handleCloseModal = event => {
     const isOutside = !event.target.closest(`.inner-modal`);
     if (isOutside) {
         outerModal.classList.remove(`open`);
     }
 };
-
+// Close the modal
 const handleEscapeKey = event => {
     if (event.key === `Escape`) {
         closeModal();
@@ -120,8 +146,9 @@ const closeModal = event => {
     outerModal.classList.remove(`open`);
 }
 
-
+// Add event listener
 spicyInput.addEventListener(`change`, handleChecked);
+vegetarianInput.addEventListener(`change`, CheckedVeg);
 window.addEventListener(`keydown`, handleEscapeKey);
 outerModal.addEventListener(`click`, handleCloseModal);
 confirmBtn.addEventListener(`click`, handleConfirmBtn);
