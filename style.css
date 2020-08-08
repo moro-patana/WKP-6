@@ -36,3 +36,13 @@ body {
     color: aliceblue;
     margin-top: 2rem;
 }
+.container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+}
+.order {
+    background-color: gainsboro;
+    padding: 2rem;
+    border-radius: 10px;
+}
