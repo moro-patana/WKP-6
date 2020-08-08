@@ -1,0 +1,38 @@
+body {
+    background-color: #ffff;
+}
+
+.form-input {
+    background-color: gainsboro;
+    padding: 2rem;
+    border-radius: 10px;
+}
+.form-input h2 {
+    text-align: center;
+}
+.choice ul {
+    display: flex;
+    flex-direction: row;
+}
+.choice li {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.menu ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.menu li {
+    list-style: none;
+}
+.confirm {
+    width: 150px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: darkcyan;
+    text-transform: uppercase;
+    color: aliceblue;
+    margin-top: 2rem;
+}
