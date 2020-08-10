@@ -1,92 +1,44 @@
-# WKP6 - Hungry Student Restaurant
+# Report:
+## In my html:
+ * I only have a form with two checkboxes and an article nothing inside.
 
-### Another website about food, really...
+## In script:
+   
+   1. First of all, I grabed the elements which I will use.
 
-Yes, but who doesn't like food? 😄
+   2. Used map to generate the food array object and created an html.
 
-This time, we're going to build a food delivery app, where we can see the meal options, select them, and see the result in our cart.
+   3. Push the html to the DOM.
 
-### Users must be able to :
+   4. I created the order card for the customers' choices and insert it into the DOM as well.
 
--   See a list of five meal options
--   See the prices of each meal option
--   Add a meal to the cart
--   Filter the list to see only the vegetarian meals, or only the spicy ones
--   See their total bill
--   “Check out” - this doesn’t have to process payment, just simply display
-    a message stating the order as been confirmed.
+   5. Add event listener to the checkboxes:
 
-### Bonus :
+     * put condition if the checkboxes are checked and we only have spicy food or vegetarian food.
 
--   Change the quantity of meals in the cart
--   Remove a meal from the cart
+	 * created an html for each type of food (vegetarian or spicy).
 
-Here is an example of layout :
+   6. I created a modal as a message from the restaurant for the customer:
+		***Thanking***, 
+		***Asking for patient***,
+		***The total cost***
 
-![assets/1.png](assets/1.png)
+**NB**: If i had more time, I would work on the customer order card and made my checboxes work propery.
 
-And when I click on the _Confirm Order_ button, I can display a message to show the total bill from the order.
+## Lesson:
 
-![assets/2.png](assets/2.png)
+In this project, I learnt that map() works as a loop and what is surprising me is that we can add event listener to the checkbox.
 
-### Food list
+## Difficult part:
 
-Here's the food object :
+I could not finish the order part i mean the customers card.
 
-```jsx
-const foods = [
-	{
-		id: 'ravitoto',
-		price: 5000,
-		title: 'Ravitoto',
-		spicy: true,
-		vegetarian: false,
-	},
-	{
-		id: 'pasta',
-		price: 4000,
-		title: 'Pasta',
-		spicy: true,
-		vegetarian: true,
-	},
-	{
-		id: 'burger',
-		price: 5000,
-		title: 'Burger',
-		spicy: false,
-		vegetarian: false,
-	},
-	{
-		id: 'rice',
-		price: 2000,
-		title: 'Rice and Leaves',
-		spicy: false,
-		vegetarian: true,
-	},
-	{
-		id: 'mofogasy',
-		price: 500,
-		title: 'Mofogasy',
-		spicy: false,
-		vegetarian: false,
-	},
-];
-```
+## Help:
 
-The **id** here is a unique string, is role is to identify an element inside the list. The title will be the food name shown to the user.
+Do you mind giving me more explanation how differenciate:
 
-You'll also have an **order** collection, where you will push a food object every time the user add an element to his order.
+**element.innerHTML += ""; and element.innerHTML = "";**
 
-### Maps, Filter, Reduce, and other friends
+## Summary
 
--   To generate any list of element (for example, the list of food), **Map** is really useful.
--   To get the full price of list of items, **Reduce** is the perfect use case.
--   To count how many times an item is in a list, you could **Filter** the list and see the length of the result, or use a **Reduce** to count all of the instances.
-
-But this is just one way to think about that. Feel free to try any other logic you have in mind.
-
-### 💡Tips
-
--   Don't forget to clean your code, and update your readme before Monday morning.
-
-Good luck!
+In general, I love solving a difficult topisc like this so that i learn new thing later. Thank you for giving us new project every weekend!!
